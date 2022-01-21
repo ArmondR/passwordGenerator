@@ -16,6 +16,7 @@ function generatePassword(){
 console.log(length);
 console.log(characters);
 
+// randomly iterates through generated string to create random password
 for(var i = 0; i < length; i++ ){
   var randomNumber = Math.floor(Math.random() * characters.length);
   var randomChar = characters[randomNumber];
@@ -27,8 +28,6 @@ return password
 
 // Write password to the #password input
 function writePassword() {
-  // ask client to confirm and records answer
-
 
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -48,7 +47,7 @@ var passwordLength = function(){
   }
 };
 
-
+ 
   var chooseCharacters = function() {
     
      var lowerCase = "";
@@ -95,6 +94,6 @@ var passwordLength = function(){
    return lowerCase + upperCase + numeric + special
  };
 
-// Add event listener to generate button
+// Event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
